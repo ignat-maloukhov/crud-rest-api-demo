@@ -1,5 +1,4 @@
 # Spring Boot + JPA and Hibernate + PostgreSQL RESTful CRUD API demo project
-</br>Ignat Malouhov, 03.2023
 
 ## Introduction
 I`m exited to introduce you my journey through Java and Spring technologies to Software Engineer knowledge and experience.
@@ -32,7 +31,6 @@ The following are the endpoints of API:</br>
 | POST   | /api/v1/..                     | create new ...                               |
 | GET    | /api/v1/.../id                 | retrieve a ... by {id}                       |
 | GET    | /api/v1/...s                   | retrieve all ...                             |
-| GET    | /api/v1/...s?keyword={keyword} | find all ... which fields contains {keyword} |
 | PUT    | /api/v1/.../id                 | update a ... by {id}                         |
 | DELETE | /api/v1/.../id                 | delete a ... by {id}                         |
 | DELETE | /api/v1/...s                   | delete all ...                               |
@@ -47,7 +45,7 @@ password ****
 ## Project backlog
 :ok_hand: MVP: Customer Entity, Service, Repository, Controller and database setup</br>
 :construction_worker: Test Repository and Controller</br>
-:construction_worker: Add two entities Account + Cashback and implement JPA One-To-Many + Many-To-Many mapping</br>
+:construction_worker: Implement JPA One-To-Many + Many-To-Many mapping</br>
 :construction_worker: Loading initial data to the database using data.sql</br>
 :construction_worker: Add complex queue with JOIN to the Repository, Service and Controller</br>
 :construction_worker: Refactor Controller using DTO and implement MapStruct mapper</br>
@@ -70,4 +68,3 @@ password ****
 7. [Ultimate Guide to Implementing equals() and hashCode() with Hibernate](https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/)</br>
 8. [Hibernate @NotNull vs @Column(nullable = false)](https://www.baeldung.com/hibernate-notnull-vs-nullable)</br>
 9. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
-10. 
