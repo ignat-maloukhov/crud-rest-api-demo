@@ -2,17 +2,13 @@ package demo.malouhov.crudrestapidemo.customer;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Objects;
 
 @Setter
 @Getter
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "customers")
 public class CustomerEntity {
@@ -32,6 +28,31 @@ public class CustomerEntity {
     @NotNull
     @Column(unique = true)
     private String email;
+
+    public CustomerEntity() {
+    }
+
+    public CustomerEntity(String firstName, String lastName, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CustomerEntity that = (CustomerEntity) o;
+        return Objects.equals(this.id, that.id)
+                && Objects.equals(this.firstName, that.firstName)
+                && Objects.equals(this.lastName, that.lastName)
+                && Objects.equals(this.email, that.email);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.id, this.firstName, this.lastName, this.email);
+    }
 
     @Override
     public String toString() {
