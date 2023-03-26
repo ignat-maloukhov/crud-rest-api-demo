@@ -45,12 +45,14 @@ password ****
 ## Project backlog
 :ok_hand: MVP: Customer Entity, Service, Repository, Controller and database setup</br>
 :construction_worker: Test Repository and Controller</br>
+:construction_worker: Override equals() and hashCode() + test using github.com/jqno/equalsverifier</br>
 :construction_worker: Implement JPA One-To-Many + Many-To-Many mapping</br>
 :construction_worker: Loading initial data to the database using data.sql</br>
 :construction_worker: Add complex queue with JOIN to the Repository, Service and Controller</br>
 :construction_worker: Refactor Controller using DTO and implement MapStruct mapper</br>
 :construction_worker: Add validation to the Controller</br>
 :construction_worker: Handle rest exceptions using ExceptionHandler</br>
+:construction_worker: Add logging using AOP</br>
 :construction_worker: Dockerize application</br>
 
 ## Technologies

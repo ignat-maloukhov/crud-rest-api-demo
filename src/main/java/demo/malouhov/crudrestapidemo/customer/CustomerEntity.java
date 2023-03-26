@@ -34,19 +34,6 @@ public class CustomerEntity {
     private String email;
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CustomerEntity other = (CustomerEntity) o;
-        return Objects.equals(id, other.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    @Override
     public String toString() {
         return "CustomerEntity{" +
                 "id=" + id +
