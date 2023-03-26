@@ -7,15 +7,14 @@ import org.mockito.ArgumentCaptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(controllers = CustomerController.class)
@@ -31,51 +30,51 @@ class CustomerControllerTest {
     private CustomerService customerService;
 
     @Test
-    @DisplayName("Test createCustomer: Valid URL, Method and Content Type")
+    @DisplayName("Test createCustomer method: Valid URL, Method and Content Type returns HTTP Status 200")
     void whenValidUrlAndMethodAndContentTypeThenReturns201() throws Exception {
 
         CustomerEntity testCustomer = new CustomerEntity("John", "Wick", "john@email.com");
 
         mockMvc.perform(post("/api/v1/customers")
                         .content(objectMapper.writeValueAsString(testCustomer))
-                        .contentType("application/json"))
-                .andExpect(status().isCreated());
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isCreated()).andDo(print());
     }
 
     @Test
-    @DisplayName("Test createCustomer: Valid URL and Method, invalid Content Type")
+    @DisplayName("Test createCustomer method: Valid URL and Method, invalid Content Type returns HTTP Status 400")
     void whenValidUrlAndMethodAndInvalidContentTypeThenReturns400() throws Exception {
 
         String invalidContentType = "John";
 
         mockMvc.perform(post("/api/v1/customers")
                         .content(objectMapper.writeValueAsString(invalidContentType))
-                        .contentType("application/json"))
-                .andExpect(status().isBadRequest());
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest()).andDo(print());
     }
 
     @Test
-    @DisplayName("Test createCustomer: Valid URL and Method, invalid Content Type with null")
+    @DisplayName("Test createCustomer method: Valid URL and Method, invalid Content Type with null returns HTTP Status 400")
     void whenNullValueThenReturns400() throws Exception {
 
         CustomerEntity testCustomer = new CustomerEntity(null, "Wick", "john@email.com");
 
         mockMvc.perform(post("/api/v1/customers")
                         .content(objectMapper.writeValueAsString(testCustomer))
-                        .contentType("application/json"))
-                .andExpect(status().isBadRequest());
+                        .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest()).andDo(print());
     }
 
     @Test
-    @DisplayName("Test createCustomer: Valid input calls Business Model")
+    @DisplayName("Test createCustomer method: Valid input calls Business Model")
     void whenValidInputThenCallsBusinessModel() throws Exception {
 
         CustomerEntity testCustomer = new CustomerEntity("John", "Wick", "john@email.com");
 
         mockMvc.perform(post("/api/v1/customers")
-                        .contentType("application/json")
+                        .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(testCustomer)))
-                .andExpect(status().isCreated());
+                .andExpect(status().isCreated()).andDo(print());
 
         ArgumentCaptor<CustomerEntity> customerCaptor = ArgumentCaptor.forClass(CustomerEntity.class);
         verify(customerService, times(1)).create(customerCaptor.capture());
@@ -85,27 +84,4 @@ class CustomerControllerTest {
 
     }
 
-    @Test
-    void createCustomer() {
-    }
-
-    @Test
-    void getCustomerById() {
-    }
-
-    @Test
-    void getAllCustomers() {
-    }
-
-    @Test
-    void updateCustomer() {
-    }
-
-    @Test
-    void deleteCustomer() {
-    }
-
-    @Test
-    void deleteAllCustomers() {
-    }
 }
