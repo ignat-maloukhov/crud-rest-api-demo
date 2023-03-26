@@ -46,7 +46,7 @@ password ****
 :ok_hand: MVP: Customer Entity, Service, Repository, Controller and database setup</br>
 :ok_hand: Test Repository and Controller</br>
 :construction_worker: Override equals() and hashCode() + test using github.com/jqno/equalsverifier</br>
-:construction_worker: Implement JPA One-To-Many + Many-To-Many mapping</br>
+:ok_hand: Implement JPA One-To-Many + Many-To-Many mapping</br>
 :construction_worker: Loading initial data to the database using data.sql</br>
 :construction_worker: Add complex queue with JOIN to the Repository, Service and Controller</br>
 :construction_worker: Refactor Controller using DTO and implement MapStruct mapper</br>
@@ -71,4 +71,6 @@ password ****
 8. [Hibernate @NotNull vs @Column(nullable = false)](https://www.baeldung.com/hibernate-notnull-vs-nullable)</br>
 9. [Unit Testing with Spring Boot article series](https://reflectoring.io/unit-testing-spring-boot/)</br>
 10. [Spring Boot MockMVC Example](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/)</br>
-10. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
+11. [Map Associations with JPA and Hibernate – The Ultimate Guide](https://thorben-janssen.com/ultimate-guide-association-mappings-jpa-hibernate/)</br>
+12. [Entity Mappings: Introduction to JPA FetchTypes](https://thorben-janssen.com/entity-mappings-introduction-jpa-fetchtypes/)</br>
+12. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>

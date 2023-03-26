@@ -1,10 +1,13 @@
 package demo.malouhov.crudrestapidemo.customer;
 
+import demo.malouhov.crudrestapidemo.account.AccountEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Setter
@@ -18,16 +21,17 @@ public class CustomerEntity {
     private long id;
 
     @NotNull
-    @Column(name = "first_name")
     private String firstName;
 
     @NotNull
-    @Column(name = "last_name")
     private String lastName;
 
     @NotNull
     @Column(unique = true)
     private String email;
+
+    @OneToMany(mappedBy = "owner")
+    private List<AccountEntity> items = new ArrayList<AccountEntity>();
 
     public CustomerEntity() {
     }
