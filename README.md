@@ -26,14 +26,14 @@ Or you can run it from Maven directly using the Spring Boot Maven plugin:
 ## Description
 The following are the endpoints of API:</br>
 
-| Method | Path                           | Description                                  |            
-|--------|--------------------------------|----------------------------------------------|
-| POST   | /api/v1/..                     | create new ...                               |
-| GET    | /api/v1/.../id                 | retrieve a ... by {id}                       |
-| GET    | /api/v1/...s                   | retrieve all ...                             |
-| PUT    | /api/v1/.../id                 | update a ... by {id}                         |
-| DELETE | /api/v1/.../id                 | delete a ... by {id}                         |
-| DELETE | /api/v1/...s                   | delete all ...                               |
+| Method | Path            | Description                                  |            
+|--------|-----------------|----------------------------------------------|
+| POST   | /api/v1/...s    | create new ...                               |
+| GET    | /api/v1/...s/id | retrieve a ... by {id}                       |
+| GET    | /api/v1/...s    | retrieve all ...                             |
+| PUT    | /api/v1/...s/id | update a ... by {id}                         |
+| DELETE | /api/v1/...s/id | delete a ... by {id}                         |
+| DELETE | /api/v1/...s    | delete all ...                               |
 
 ## Database configuration
 My application use PostgreSQL database. You can create database locally using:
@@ -44,13 +44,15 @@ password ****
 
 ## Project backlog
 :ok_hand: MVP: Customer Entity, Service, Repository, Controller and database setup</br>
-:construction_worker: Test Repository and Controller</br>
+:ok_hand: Test Repository and Controller</br>
+:construction_worker: Override equals() and hashCode() + test using github.com/jqno/equalsverifier</br>
 :construction_worker: Implement JPA One-To-Many + Many-To-Many mapping</br>
 :construction_worker: Loading initial data to the database using data.sql</br>
 :construction_worker: Add complex queue with JOIN to the Repository, Service and Controller</br>
 :construction_worker: Refactor Controller using DTO and implement MapStruct mapper</br>
 :construction_worker: Add validation to the Controller</br>
 :construction_worker: Handle rest exceptions using ExceptionHandler</br>
+:construction_worker: Add logging using AOP</br>
 :construction_worker: Dockerize application</br>
 
 ## Technologies
@@ -67,4 +69,6 @@ password ****
 6. [Lombok & Hibernate: How to Avoid Common Pitfalls](https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/)</br>
 7. [Ultimate Guide to Implementing equals() and hashCode() with Hibernate](https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/)</br>
 8. [Hibernate @NotNull vs @Column(nullable = false)](https://www.baeldung.com/hibernate-notnull-vs-nullable)</br>
-9. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
+9. [Unit Testing with Spring Boot article series](https://reflectoring.io/unit-testing-spring-boot/)</br>
+10. [Spring Boot MockMVC Example](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/)</br>
+10. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
