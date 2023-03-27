@@ -22,6 +22,7 @@ public class CashbackEntity {
     private long id;
 
     @NotNull
+    @Enumerated(EnumType.ORDINAL)
     private CashbackCategory category;
 
     @NotNull
@@ -32,6 +33,7 @@ public class CashbackEntity {
 
     public enum CashbackCategory {
 
+        NONE,
         RESTAURANTS,
         TRANSPORT,
         MARKETS
