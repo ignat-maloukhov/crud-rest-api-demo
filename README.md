@@ -3,6 +3,7 @@
 ## Introduction
 I`m exited to introduce you my journey through Java and Spring technologies to Software Engineer knowledge and experience.
 I prefer to dig into all possible advantages / disadvantages when write every line of code.
+This is my best code right now, every day I think how to improve it.
 
 ## Running application locally
 You can build a jar file and run it from the command line (it should work just as well with Java 17 or newer):
@@ -73,4 +74,7 @@ password ****
 10. [Spring Boot MockMVC Example](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/)</br>
 11. [Map Associations with JPA and Hibernate – The Ultimate Guide](https://thorben-janssen.com/ultimate-guide-association-mappings-jpa-hibernate/)</br>
 12. [Entity Mappings: Introduction to JPA FetchTypes](https://thorben-janssen.com/entity-mappings-introduction-jpa-fetchtypes/)</br>
-12. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
+13. [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)</br>
+14. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
+15. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
+15. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
