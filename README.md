@@ -48,7 +48,7 @@ password ****
 :ok_hand: Test Repository and Controller</br>
 :construction_worker: Override equals() and hashCode() + test using github.com/jqno/equalsverifier</br>
 :ok_hand: Implement JPA One-To-Many + Many-To-Many mapping</br>
-:construction_worker: Loading initial data to the database using data.sql</br>
+:ok_hand: Loading initial data to the database using data.sql</br>
 :construction_worker: Add complex queue with JOIN to the Repository, Service and Controller</br>
 :construction_worker: Refactor Controller using DTO and implement MapStruct mapper</br>
 :construction_worker: Add validation to the Controller</br>
@@ -77,4 +77,5 @@ password ****
 13. [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)</br>
 14. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
 15. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
-15. [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
+16. [Quick Guide on Loading Initial Data with Spring Boot](https://www.baeldung.com/spring-boot-data-sql-and-schema-sql)</br>
+[LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
