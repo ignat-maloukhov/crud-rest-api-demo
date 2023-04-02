@@ -1,5 +1,6 @@
 package demo.malouhov.crudrestapidemo.customer;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import demo.malouhov.crudrestapidemo.account.AccountEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -8,7 +9,6 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 @Setter
 @Getter
@@ -30,8 +30,9 @@ public class CustomerEntity {
     @Column(unique = true)
     private String email;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "owner")
-    private List<AccountEntity> items = new ArrayList<AccountEntity>();
+    private List<AccountEntity> accounts = new ArrayList<>();
 
     public CustomerEntity() {
     }
@@ -40,22 +41,6 @@ public class CustomerEntity {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CustomerEntity that = (CustomerEntity) o;
-        return Objects.equals(this.id, that.id)
-                && Objects.equals(this.firstName, that.firstName)
-                && Objects.equals(this.lastName, that.lastName)
-                && Objects.equals(this.email, that.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.id, this.firstName, this.lastName, this.email);
     }
 
     @Override

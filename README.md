@@ -47,10 +47,10 @@ password ****
 :ok_hand: MVP: Customer Entity, Service, Repository, Controller and database setup</br>
 :ok_hand: Test Repository and Controller</br>
 :construction_worker: Override equals() and hashCode() + test using github.com/jqno/equalsverifier</br>
-:ok_hand: Implement JPA One-To-Many + Many-To-Many mapping</br>
-:ok_hand: Loading initial data to the database using data.sql</br>
+:ok_hand: Implement JPA One-To-One + One-To-Many + Many-To-Many mapping</br>
+:ok_hand: Load initial data to the database using data.sql</br>
 :construction_worker: Add complex queue with JOIN to the Repository, Service and Controller</br>
-:construction_worker: Refactor Controller using DTO and implement MapStruct mapper</br>
+:ok_hand: Refactor Controller using DTO and implement MapStruct mapper</br>
 :construction_worker: Add validation to the Controller</br>
 :construction_worker: Handle rest exceptions using ExceptionHandler</br>
 :construction_worker: Add logging using AOP</br>
@@ -74,8 +74,12 @@ password ****
 10. [Spring Boot MockMVC Example](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/)</br>
 11. [Map Associations with JPA and Hibernate – The Ultimate Guide](https://thorben-janssen.com/ultimate-guide-association-mappings-jpa-hibernate/)</br>
 12. [Entity Mappings: Introduction to JPA FetchTypes](https://thorben-janssen.com/entity-mappings-introduction-jpa-fetchtypes/)</br>
-13. [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)</br>
-14. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
-15. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
-16. [Quick Guide on Loading Initial Data with Spring Boot](https://www.baeldung.com/spring-boot-data-sql-and-schema-sql)</br>
+13. [The DTO Pattern (Data Transfer Object)](https://www.baeldung.com/java-dto-pattern)</br>
+14. [Mapping JPA Entities into DTOs in Spring Boot Using MapStruct](https://auth0.com/blog/how-to-automatically-map-jpa-entities-into-dtos-in-spring-boot-using-mapstruct/)</br>
+15. [Jackson – Bidirectional Relationships](https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion)</br>
+16. [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)</br>
+17. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
+18. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
+19. [Quick Guide on Loading Initial Data with Spring Boot](https://www.baeldung.com/spring-boot-data-sql-and-schema-sql)</br>
+20. [Derived Query Methods in Spring Data JPA Repositories](https://www.baeldung.com/spring-data-derived-queries)</br>
 [LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>

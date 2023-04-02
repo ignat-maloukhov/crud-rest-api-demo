@@ -8,7 +8,7 @@ import java.util.Optional;
 
 @Service
 @AllArgsConstructor
-public class DefaultCustomerService implements CustomerService {
+public class CustomerServiceDefault implements CustomerService {
 
     private final CustomerRepository repository;
 

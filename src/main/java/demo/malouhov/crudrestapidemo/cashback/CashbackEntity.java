@@ -8,7 +8,6 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Setter
@@ -46,21 +45,6 @@ public class CashbackEntity {
     public CashbackEntity(CashbackCategory category, BigDecimal rate) {
         this.category = category;
         this.rate = rate;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        CashbackEntity that = (CashbackEntity) o;
-        return Objects.equals(this.id, that.id)
-                && Objects.equals(this.category, that.category)
-                && Objects.equals(this.rate, that.rate);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.id, this.category, this.rate);
     }
 
     @Override

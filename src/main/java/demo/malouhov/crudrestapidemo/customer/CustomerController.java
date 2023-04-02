@@ -1,5 +1,7 @@
 package demo.malouhov.crudrestapidemo.customer;
 
+import demo.malouhov.crudrestapidemo.customer.dto.GetCustomerDto;
+import demo.malouhov.crudrestapidemo.customer.dto.PostCustomerDto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,17 +18,19 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
+    private final EntityToDtoMapper entityToDtoMapper;
+
     /**
      * Sends a request to create a new Customer.
      *
-     * @param customer - object CustomerEntity
-     * @return - if created ResponseEntity with CustomerEntity object and HttpStatus
+     * @param postCustomerDto - object PostCustomerDto
+     * @return - if created ResponseEntity with PostCustomerDto object and HttpStatus
      */
     @PostMapping("/customers")
-    public ResponseEntity<CustomerEntity> createCustomer(@Valid @RequestBody CustomerEntity customer) {
+    public ResponseEntity<PostCustomerDto> createCustomer(@Valid @RequestBody PostCustomerDto postCustomerDto) {
         try {
-            CustomerEntity createdCustomer = customerService.create(customer);
-            return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
+            CustomerEntity createdCustomer = customerService.create(entityToDtoMapper.postDtoToEntity(postCustomerDto));
+            return new ResponseEntity<>(entityToDtoMapper.entityToPostDto(createdCustomer), HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -36,14 +40,13 @@ public class CustomerController {
      * Sends a request to retrieve Customer by id.
      *
      * @param id - retrieved Customer id.
-     * @return - if received ResponseEntity with CustomerEntity object and HttpStatus
+     * @return - if received ResponseEntity with GetCustomerDto object and HttpStatus
      */
     @GetMapping("/customers/{id}")
-    public ResponseEntity<CustomerEntity> getCustomerById(@PathVariable("id") long id) {
+    public ResponseEntity<GetCustomerDto> getCustomerById(@PathVariable("id") long id) {
         try {
-
             Optional<CustomerEntity> savedCustomer = customerService.getById(id);
-            return savedCustomer.map(c -> new ResponseEntity<>(c, HttpStatus.OK))
+            return savedCustomer.map(customer -> new ResponseEntity<>(entityToDtoMapper.entityToGetDto(customer), HttpStatus.OK))
                     .orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -53,16 +56,17 @@ public class CustomerController {
     /**
      * Sends a request to retrieve all Customers.
      *
-     * @return - if received List with ResponseEntity with CustomerEntity object and HttpStatus
+     * @return - if received List with ResponseEntity with GetCustomerDto object and HttpStatus
      */
     @GetMapping("/customers")
-    public ResponseEntity<List<CustomerEntity>> getAllCustomers() {
+    public ResponseEntity<List<GetCustomerDto>> getAllCustomers() {
         try {
             List<CustomerEntity> savedCustomers = customerService.getAll();
             if (savedCustomers.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             } else {
-                return new ResponseEntity<>(savedCustomers, HttpStatus.OK);
+
+                return new ResponseEntity<>(entityToDtoMapper.entityListToGetDtoList(savedCustomers), HttpStatus.OK);
             }
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -72,20 +76,22 @@ public class CustomerController {
     /**
      * Sends a request to update Customer with given id.
      *
-     * @param id          - updated Customer id
-     * @param newCustomer - new data
-     * @return - if updated ResponseEntity with CustomerEntity object and HttpStatus
+     * @param id             - updated Customer id
+     * @param newCustomerDto - new data
+     * @return - if updated ResponseEntity with PostCustomerDto object and HttpStatus
      */
     @PutMapping("/customers/{id}")
-    public ResponseEntity<CustomerEntity> updateCustomer(@PathVariable("id") long id,
-                                                         @RequestBody CustomerEntity newCustomer) {
+    public ResponseEntity<PostCustomerDto> updateCustomer(@PathVariable("id") long id,
+                                                          @RequestBody PostCustomerDto newCustomerDto) {
         try {
+            CustomerEntity newCustomer = entityToDtoMapper.postDtoToEntity(newCustomerDto);
             return customerService.getById(id)
-                    .map(c -> {
-                        c.setFirstName(newCustomer.getFirstName());
-                        c.setLastName(newCustomer.getLastName());
-                        c.setEmail(newCustomer.getEmail());
-                        return new ResponseEntity<>(customerService.create(c), HttpStatus.OK);
+                    .map(customer -> {
+                        customer.setFirstName(newCustomer.getFirstName());
+                        customer.setLastName(newCustomer.getLastName());
+                        customer.setEmail(newCustomer.getEmail());
+                        customerService.create(customer);
+                        return new ResponseEntity<>(entityToDtoMapper.entityToPostDto(newCustomer), HttpStatus.OK);
                     })
                     .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
         } catch (Exception e) {

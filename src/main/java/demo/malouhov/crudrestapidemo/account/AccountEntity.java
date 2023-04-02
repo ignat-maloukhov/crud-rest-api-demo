@@ -1,5 +1,7 @@
 package demo.malouhov.crudrestapidemo.account;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import demo.malouhov.crudrestapidemo.cashback.CashbackEntity;
 import demo.malouhov.crudrestapidemo.customer.CustomerEntity;
 import jakarta.persistence.*;
@@ -11,7 +13,6 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Setter
@@ -24,6 +25,7 @@ public class AccountEntity {
     @GeneratedValue
     private long id;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_customer")
     CustomerEntity owner;
@@ -34,6 +36,7 @@ public class AccountEntity {
     @CreationTimestamp
     private LocalDate created;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(name = "account_cashback",
             joinColumns = {@JoinColumn(name = "fk_account")},
@@ -45,21 +48,6 @@ public class AccountEntity {
 
     public AccountEntity(CustomerEntity owner) {
         this.owner = owner;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AccountEntity that = (AccountEntity) o;
-        return Objects.equals(this.id, that.id)
-                && Objects.equals(this.amount, that.amount)
-                && Objects.equals(this.created, that.created);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(this.id, this.amount, this.created);
     }
 
     @Override
