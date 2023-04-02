@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="PostgreSQL" id="Project-1be9" database="PostgreSQL" >
+	<schema name="public" >
+		<comment><![CDATA[standard public schema]]></comment>
+		<table name="account_cashback" generator_rows="225" row_count="0" >
+			<column name="fk_account" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="fk_cashback" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<index name="account_cashback_pkey" unique="PRIMARY_KEY" >
+				<column name="fk_account" />
+				<column name="fk_cashback" />
+			</index>
+			<fk name="fk4f2cdgtr5a59x0ejr4nkt06p8" to_schema="public" to_table="accounts" >
+				<fk_column name="fk_account" pk="id" />
+			</fk>
+			<fk name="fk16pwik4k6qwxvo8vpksjtct2f" to_schema="public" to_table="cashback" >
+				<fk_column name="fk_cashback" pk="id" />
+			</fk>
+		</table>
+		<table name="accounts" generator_rows="150" row_count="0" >
+			<column name="id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="amount" type="numeric" length="38" decimal="2" jt="2" mandatory="y" />
+			<column name="created" type="date" length="13" decimal="0" jt="91" />
+			<column name="fk_customer" type="bigint" length="19" decimal="0" jt="-5" />
+			<index name="accounts_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fkrfeop5i01s5xnkhhtt9k4ujp2" to_schema="public" to_table="customers" >
+				<fk_column name="fk_customer" pk="id" />
+			</fk>
+		</table>
+		<table name="cashback" generator_rows="150" row_count="0" >
+			<column name="id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="category" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
+			<column name="fk_cashback_rate" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<index name="cashback_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<fk name="fkplvoogwxd3w9uhpsho0shmf8g" to_schema="public" to_table="cashback_rates" >
+				<fk_column name="fk_cashback_rate" pk="id" />
+			</fk>
+		</table>
+		<table name="cashback_rates" generator_rows="100" row_count="0" >
+			<column name="id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="amount" type="numeric" length="38" decimal="2" jt="2" mandatory="y" />
+			<column name="cashback_category" type="smallint" length="5" decimal="0" jt="5" mandatory="y" />
+			<index name="cashback_rates_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+		</table>
+		<table name="customers" generator_rows="100" row_count="0" >
+			<column name="id" type="bigint" length="19" decimal="0" jt="-5" mandatory="y" />
+			<column name="email" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<column name="first_name" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<column name="last_name" type="varchar" length="255" decimal="0" jt="12" mandatory="y" />
+			<index name="customers_pkey" unique="PRIMARY_KEY" >
+				<column name="id" />
+			</index>
+			<index name="uk_rfbvkrffamfql7cjmen8v976v" unique="UNIQUE_KEY" >
+				<column name="email" />
+			</index>
+		</table>
+		<sequence name="accounts_seq" options="START WITH 1 INCREMENT BY 50" />
+		<sequence name="cashback_rates_seq" options="START WITH 1 INCREMENT BY 50" />
+		<sequence name="cashback_seq" options="START WITH 1 INCREMENT BY 50" />
+		<sequence name="customers_seq" options="START WITH 1 INCREMENT BY 50" />
+	</schema>
+	<connector name="PostgreSQL" database="PostgreSQL" driver_class="org.postgresql.Driver" driver_jar="postgresql-42.5.3.jar" url="jdbc:postgresql://localhost:5432/crud-rest-api-demo-database" host="localhost" port="5432" instance="postgres" user="postgres" passwd="MTIzNA==" useSystemProxy="false" />
+	<layout name="Main Layout" id="Layout-2097" show_column_type="y" show_relation="columns" >
+		<entity schema="public" name="account_cashback" color="BED3F4" x="320" y="560" />
+		<entity schema="public" name="accounts" color="BED3F4" x="48" y="560" />
+		<entity schema="public" name="cashback" color="BED3F4" x="576" y="560" />
+		<entity schema="public" name="cashback_rates" color="BED3F4" x="576" y="736" />
+		<entity schema="public" name="customers" color="BED3F4" x="48" y="304" />
+		<callout x="48" y="80" pointer="Round" >
+			<comment><![CDATA[This is a layout. 
+- Double-click table headers, columns, or foreign keys to edit 
+- Drag tables to the layout from the structure tree, or 
+   add them by pressing the arrow icon near columns 
+- Create multiple layouts with the same or different tables 
+- Right-click the layout to create new tables]]></comment>
+		</callout>
+		<group name="crud-rest-api-demo-database" color="ECF0F7" >
+			<entity schema="public" name="account_cashback" />
+			<entity schema="public" name="cashback_rates" />
+			<entity schema="public" name="cashback" />
+			<entity schema="public" name="customers" />
+			<entity schema="public" name="accounts" />
+		</group>
+	</layout>
+	<layout name="~Layout with Sample Tools" id="Layout-16d6" show_column_type="y" show_relation="columns" >
+		<entity schema="public" name="account_cashback" color="BED3F4" x="304" y="48" />
+		<entity schema="public" name="accounts" color="BED3F4" x="48" y="48" />
+		<entity schema="public" name="cashback" color="BED3F4" x="528" y="48" />
+		<entity schema="public" name="cashback_rates" color="BED3F4" x="784" y="48" />
+		<entity schema="public" name="customers" color="BED3F4" x="304" y="256" />
+		<script name="SQL Editor" id="Editor-f77" language="SQL" >
+			<string><![CDATA[SELECT
+	fk_account, fk_cashback
+FROM
+	"public".account_cashback k;]]></string>
+		</script>
+		<browser id="Browse-1c81" name="Relational Data Explorer" confirm_updates="y" >
+			<browse_table schema="public" entity="account_cashback" x="20" y="20" width="400" height="300" >
+				<browse_table schema="public" entity="accounts" fk="fk4f2cdgtr5a59x0ejr4nkt06p8" x="440" y="20" width="500" height="350" record_view="y" >
+					<browse_table schema="public" entity="customers" fk="fkrfeop5i01s5xnkhhtt9k4ujp2" x="960" y="20" width="500" height="350" record_view="y" />
+				</browse_table>
+			</browse_table>
+		</browser>
+		<query id="Query-21a0" name="Query Builder" >
+			<query_table schema="public" name="account_cashback" alias="ac" x="48" y="48" >
+				<column name="fk_account" />
+				<column name="fk_cashback" />
+				<query_table schema="public" name="accounts" alias="a" x="272" y="48" fk="fk4f2cdgtr5a59x0ejr4nkt06p8" type="Inner Join" >
+					<column name="id" />
+					<column name="amount" />
+					<column name="created" />
+					<column name="fk_customer" />
+					<query_table schema="public" name="customers" alias="c1" x="480" y="48" fk="fkrfeop5i01s5xnkhhtt9k4ujp2" type="Inner Join" >
+						<column name="id" />
+						<column name="email" />
+						<column name="first_name" />
+						<column name="last_name" />
+					</query_table>
+				</query_table>
+			</query_table>
+		</query>
+		<form name="Report" id="Report-1e79" template="Page" css="container-fluid" view="frame" >
+			<var name="samplePageNumber" type="4" value="0" mandatory="n" />
+			<var name="sampleRecordsPerPage" type="4" value="100" mandatory="n" />
+			<body name="Body" template="Grid" pos="0,0,0,0,f,f" layout="{{-2,-2,-2,-2,-1},{-2,-2,-2,-2}}" scroll="n" html="n" >
+				<cell type="label" name="Account_cashback Data" template="H3" pos="0,0,1,0,l,c" />
+				<cell type="chart" name="Pie" template="Pie" pos="0,1,4,1,l,c" max_records="20" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="fk_account" type="-5" />
+						<var name="fk_cashback" type="-5" />
+						<script ><![CDATA[SELECT * FROM "public".account_cashback]]></script>
+					</form_script>
+					<param name="width" value="100%" />
+					<param name="v0" value="fk_cashback" />
+					<param name="title" value="Sample Chart" />
+					<param name="height" value="400px" />
+				</cell>
+				<tableview name="sample" template="Table" css="table table-striped table-sm table-hover" pos="0,2,4,2,f,f" layout="{{-2,-2,-2},{-2,-2}}" scroll="n" html="n" header_rows="1" >
+					<form_script type="DataSource" language="SQL" >
+						<var name="fk_account" type="-5" />
+						<var name="fk_cashback" type="-5" />
+						<script ><![CDATA[SELECT * FROM "public".account_cashback]]></script>
+					</form_script>
+					<cell type="label" name="fk_account" pos="0,0,0,0,c,c" />
+					<cell type="label" name="fk_cashback" pos="1,0,1,0,c,c" />
+					<cell type="label" name="Button can open other pages." pos="2,0,2,0,c,c" />
+					<cell type="label" name="${fk_account}" template="Plain" pos="0,1,0,1,l,c" />
+					<cell type="label" name="${fk_cashback}" template="Plain" pos="1,1,1,1,l,c" />
+					<cell type="button" name="More" template="Plain" css="btn btn-sm btn-secondary" pos="2,1,2,1,c,c" ref_id="Report-1e79" />
+				</tableview>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="0,3,0,3,l,c" glyph="bi-chevron_double_left" ref_id="Report-1e79" >
+					<var name="samplePageNumber" value="0" />
+				</cell>
+				<cell type="href" name="" disabled="${samplePageNumber&lt;1}" pos="1,3,1,3,l,c" glyph="bi-chevron_left" ref_id="Report-1e79" >
+					<var name="samplePageNumber" value="${Math.max(0,samplePageNumber-1)}" />
+				</cell>
+				<cell type="label" name="Page ${samplePageNumber+1}" pos="2,3,2,3,l,c" />
+				<cell type="href" name="" disabled="${!sampleHasNextPage}" pos="3,3,3,3,l,c" glyph="bi-chevron_right" ref_id="Report-1e79" >
+					<var name="samplePageNumber" value="${( samplePageNumber+1 )}" />
+				</cell>
+			</body>
+		</form>
+	</layout>
+</project>

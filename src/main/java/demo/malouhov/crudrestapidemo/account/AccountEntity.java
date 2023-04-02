@@ -30,10 +30,9 @@ public class AccountEntity {
     @JoinColumn(name = "fk_customer")
     CustomerEntity owner;
 
-    @NotNull
+
     private BigDecimal amount;
 
-    @CreationTimestamp
     private LocalDate created;
 
     @JsonIgnore

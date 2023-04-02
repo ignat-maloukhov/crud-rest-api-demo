@@ -20,11 +20,9 @@ public class CashbackEntity {
     @GeneratedValue
     private long id;
 
-    @NotNull
     @Enumerated(EnumType.ORDINAL)
     private CashbackCategory category;
 
-    @NotNull
     @OneToOne
     @JoinColumn(name = "fk_cashback_rate")
     private CashbackRateEntity rate;
