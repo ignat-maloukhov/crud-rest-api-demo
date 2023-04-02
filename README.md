@@ -3,7 +3,7 @@
 ## Introduction
 I`m exited to introduce you my journey through Java and Spring technologies to Software Engineer knowledge and experience.
 I prefer to dig into all possible advantages / disadvantages when write every line of code.
-This is my best code right now, every day I think how to improve it.
+This is my best code right now, every day I work to improve it.
 
 ## Running application locally
 You can build a jar file and run it from the command line (it should work just as well with Java 17 or newer):
@@ -27,14 +27,14 @@ Or you can run it from Maven directly using the Spring Boot Maven plugin:
 ## Description
 The following are the endpoints of API:</br>
 
-| Method | Path            | Description                                  |            
-|--------|-----------------|----------------------------------------------|
-| POST   | /api/v1/...s    | create new ...                               |
-| GET    | /api/v1/...s/id | retrieve a ... by {id}                       |
-| GET    | /api/v1/...s    | retrieve all ...                             |
-| PUT    | /api/v1/...s/id | update a ... by {id}                         |
-| DELETE | /api/v1/...s/id | delete a ... by {id}                         |
-| DELETE | /api/v1/...s    | delete all ...                               |
+| Method | Path                 | Description                 |            
+|--------|----------------------|-----------------------------|
+| POST   | /api/v1/customers    | create new customer         |
+| GET    | /api/v1/customers/id | retrieve a customer by {id} |
+| GET    | /api/v1/customers    | retrieve all customers      |
+| PUT    | /api/v1/customers/id | update a customer by {id}   |
+| DELETE | /api/v1/customers/id | delete a customer by {id}   |
+| DELETE | /api/v1/customers    | delete all customers        |
 
 ## Database configuration
 My application use PostgreSQL database. You can create database locally using:
@@ -42,6 +42,9 @@ My application use PostgreSQL database. You can create database locally using:
 createdb -h localhost -p 5432 -U postgres crud-rest-api-demo-database
 password ****
 ```
+
+Database schema is shown bellow.
+![Database schema](./src/main/resources/static/img/crud-rest-api-demo-database.png)
 
 ## Project backlog
 :ok_hand: MVP: Customer Entity, Service, Repository, Controller and database setup</br>

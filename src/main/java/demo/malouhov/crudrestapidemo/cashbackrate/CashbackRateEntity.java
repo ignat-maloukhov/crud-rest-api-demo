@@ -18,13 +18,10 @@ public class CashbackRateEntity {
     @GeneratedValue
     private long id;
 
-    @NotNull
     @Enumerated(EnumType.ORDINAL)
     private CashbackEntity.CashbackCategory cashbackCategory;
 
-    @NotNull
     private BigDecimal amount;
-
 
     public CashbackRateEntity() {
     }
