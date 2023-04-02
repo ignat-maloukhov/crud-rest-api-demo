@@ -3,7 +3,6 @@ package demo.malouhov.crudrestapidemo.customer;
 import demo.malouhov.crudrestapidemo.customer.dto.GetCustomerDto;
 import demo.malouhov.crudrestapidemo.customer.dto.PostCustomerDto;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -12,7 +11,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -32,12 +30,8 @@ public class CustomerController {
      */
     @PostMapping("/customers")
     public ResponseEntity<PostCustomerDto> createCustomer(@Valid @RequestBody PostCustomerDto postCustomerDto) {
-        try {
-            CustomerEntity createdCustomer = customerService.create(entityToDtoMapper.postDtoToEntity(postCustomerDto));
-            return new ResponseEntity<>(entityToDtoMapper.entityToPostDto(createdCustomer), HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        var createdCustomer = customerService.save(entityToDtoMapper.postDtoToEntity(postCustomerDto));
+        return new ResponseEntity<>(entityToDtoMapper.entityToPostDto(createdCustomer), HttpStatus.CREATED);
     }
 
     /**
@@ -48,13 +42,8 @@ public class CustomerController {
      */
     @GetMapping("/customers/{id}")
     public ResponseEntity<GetCustomerDto> getCustomerById(@PathVariable("id") @Positive long id) {
-        try {
-            Optional<CustomerEntity> savedCustomer = customerService.getById(id);
-            return savedCustomer.map(customer -> new ResponseEntity<>(entityToDtoMapper.entityToGetDto(customer), HttpStatus.OK))
-                    .orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        var savedCustomer = customerService.getById(id);
+        return new ResponseEntity<>(entityToDtoMapper.entityToGetDto(savedCustomer), HttpStatus.OK);
     }
 
     /**
@@ -64,17 +53,13 @@ public class CustomerController {
      */
     @GetMapping("/customers")
     public ResponseEntity<List<GetCustomerDto>> getAllCustomers() {
-        try {
-            List<CustomerEntity> savedCustomers = customerService.getAll();
-            if (savedCustomers.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            } else {
-
-                return new ResponseEntity<>(entityToDtoMapper.entityListToGetDtoList(savedCustomers), HttpStatus.OK);
-            }
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        var savedCustomers = customerService.getAll();
+        if (savedCustomers.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } else {
+            return new ResponseEntity<>(entityToDtoMapper.entityListToGetDtoList(savedCustomers), HttpStatus.OK);
         }
+
     }
 
     /**
@@ -87,20 +72,15 @@ public class CustomerController {
     @PutMapping("/customers/{id}")
     public ResponseEntity<PostCustomerDto> updateCustomer(@PathVariable("id") @Positive long id,
                                                           @Valid @RequestBody PostCustomerDto newCustomerDto) {
-        try {
-            CustomerEntity newCustomer = entityToDtoMapper.postDtoToEntity(newCustomerDto);
-            return customerService.getById(id)
-                    .map(customer -> {
-                        customer.setFirstName(newCustomer.getFirstName());
-                        customer.setLastName(newCustomer.getLastName());
-                        customer.setEmail(newCustomer.getEmail());
-                        customerService.create(customer);
-                        return new ResponseEntity<>(entityToDtoMapper.entityToPostDto(newCustomer), HttpStatus.OK);
-                    })
-                    .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+
+        var updatedCustomer = customerService.getById(id);
+        var customerData = entityToDtoMapper.postDtoToEntity(newCustomerDto);
+        updatedCustomer.setId(id);
+        updatedCustomer.setFirstName(customerData.getFirstName());
+        updatedCustomer.setLastName(customerData.getLastName());
+        updatedCustomer.setEmail(customerData.getEmail());
+        customerService.save(updatedCustomer);
+        return new ResponseEntity<>(entityToDtoMapper.entityToPostDto(updatedCustomer), HttpStatus.OK);
     }
 
     /**
@@ -111,12 +91,9 @@ public class CustomerController {
      */
     @DeleteMapping("/customers/{id}")
     public ResponseEntity<HttpStatus> deleteCustomer(@PathVariable("id") @Positive long id) {
-        try {
-            customerService.delete(id);
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        var deletedCustomer = customerService.getById(id);
+        customerService.delete(deletedCustomer.getId());
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
     /**
@@ -126,12 +103,8 @@ public class CustomerController {
      */
     @DeleteMapping("/customers")
     public ResponseEntity<HttpStatus> deleteAllCustomers() {
-        try {
-            customerService.deleteAll();
-            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-        } catch (Exception e) {
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        customerService.deleteAll();
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 
 }
