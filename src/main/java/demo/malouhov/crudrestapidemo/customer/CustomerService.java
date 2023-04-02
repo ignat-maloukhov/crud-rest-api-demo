@@ -1,7 +1,6 @@
 package demo.malouhov.crudrestapidemo.customer;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface CustomerService {
 
@@ -11,15 +10,15 @@ public interface CustomerService {
      * @param customer - object CustomerEntity
      * @return - created object CustomerEntity
      */
-    CustomerEntity create(CustomerEntity customer);
+    CustomerEntity save(CustomerEntity customer);
 
     /**
-     * Retrieve Customer by id.
+     * Retrieve Customer by id. Method throws CustomerNotFoundException if Customer is absent.
      *
      * @param id - retrieved Customer id.
-     * @return - object CustomerEntity or Optional.empty()
+     * @return - object CustomerEntity
      */
-    Optional<CustomerEntity> getById(Long id);
+    CustomerEntity getById(Long id);
 
     /**
      * Retrieve all Customer.
@@ -29,15 +28,7 @@ public interface CustomerService {
     List<CustomerEntity> getAll();
 
     /**
-     * Update Customer.
-     *
-     * @param customer - object CustomerEntity
-     * @return - updated CustomerEntity
-     */
-    CustomerEntity update(CustomerEntity customer);
-
-    /**
-     * Delete Customer.
+     * Delete Customer. Method throws CustomerNotFoundException if Customer is absent.
      *
      * @param id - deleted Customer id.
      */

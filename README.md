@@ -13,16 +13,11 @@ cd crud-rest-api-demo
 ./mvnw package
 java -jar target/*.jar
 ```
-
 You can then access my application at http://localhost:8080/
 Or you can run it from Maven directly using the Spring Boot Maven plugin:
 ```
 ./mvnw spring-boot:run
 ```
-
-> NOTE: Windows users should set `git config core.autocrlf true` to avoid format assertions failing the build (use `--global` to set that flag globally).
-
-> NOTE: If you prefer to use Gradle, you can build the app using `./gradlew build` and look for the jar file in `build/libs`.
 
 ## Description
 The following are the endpoints of API:</br>
@@ -54,15 +49,10 @@ Database schema is shown bellow.
 :ok_hand: Load initial data to the database using data.sql</br>
 :construction_worker: Add complex queue with JOIN to the Repository, Service and Controller</br>
 :ok_hand: Refactor Controller using DTO and implement MapStruct mapper</br>
-:construction_worker: Add validation to the Controller</br>
-:construction_worker: Handle rest exceptions using ExceptionHandler</br>
+:ok_hand: Add validation to the Controller</br>
+:ok_hand: Handle rest exceptions using ExceptionHandler</br>
 :construction_worker: Add logging using AOP</br>
 :construction_worker: Dockerize application</br>
-
-## Technologies
-* Java 17
-* Spring Boot
-* Hibernate
 
 ## References
 1. [Walls, Craig (2022). Spring in Action, Sixth Edition. Manning Publications. ISBN 9781617297571](https://www.manning.com/books/spring-in-action-sixth-edition)</br>
@@ -81,8 +71,9 @@ Database schema is shown bellow.
 14. [Mapping JPA Entities into DTOs in Spring Boot Using MapStruct](https://auth0.com/blog/how-to-automatically-map-jpa-entities-into-dtos-in-spring-boot-using-mapstruct/)</br>
 15. [Jackson – Bidirectional Relationships](https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion)</br>
 16. [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)</br>
-17. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
-18. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
-19. [Quick Guide on Loading Initial Data with Spring Boot](https://www.baeldung.com/spring-boot-data-sql-and-schema-sql)</br>
-20. [Derived Query Methods in Spring Data JPA Repositories](https://www.baeldung.com/spring-data-derived-queries)</br>
-[LIKE Queries in Spring JPA Repositories](https://www.baeldung.com/spring-jpa-like-queries)</br>
+17. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
+18. [Quick Guide on Loading Initial Data with Spring Boot](https://www.baeldung.com/spring-boot-data-sql-and-schema-sql)</br>
+19. [Derived Query Methods in Spring Data JPA Repositories](https://www.baeldung.com/spring-data-derived-queries)</br>
+20. [Advanced exception handling in Spring Boot](https://hyperskill.org/learn/step/19855)</br>
+21. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
+22. [Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)</br>

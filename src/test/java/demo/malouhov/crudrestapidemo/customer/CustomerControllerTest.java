@@ -77,7 +77,7 @@ class CustomerControllerTest {
                 .andExpect(status().isCreated()).andDo(print());
 
         ArgumentCaptor<CustomerEntity> customerCaptor = ArgumentCaptor.forClass(CustomerEntity.class);
-        verify(customerService, times(1)).create(customerCaptor.capture());
+        verify(customerService, times(1)).save(customerCaptor.capture());
         assertThat(customerCaptor.getValue().getFirstName()).isEqualTo("John");
         assertThat(customerCaptor.getValue().getLastName()).isEqualTo("Wick");
         assertThat(customerCaptor.getValue().getEmail()).isEqualTo("john@email.com");

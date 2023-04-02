@@ -3,7 +3,6 @@ package demo.malouhov.crudrestapidemo.cashback;
 import demo.malouhov.crudrestapidemo.account.AccountEntity;
 import demo.malouhov.crudrestapidemo.cashbackrate.CashbackRateEntity;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
