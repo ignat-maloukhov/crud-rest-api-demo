@@ -1,12 +1,12 @@
 package demo.malouhov.crudrestapidemo.cashback;
 
 import demo.malouhov.crudrestapidemo.account.AccountEntity;
+import demo.malouhov.crudrestapidemo.cashbackrate.CashbackRateEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,7 +25,9 @@ public class CashbackEntity {
     private CashbackCategory category;
 
     @NotNull
-    private BigDecimal rate;
+    @OneToOne
+    @JoinColumn(name = "fk_cashback_rate")
+    private CashbackRateEntity rate;
 
     @ManyToMany(mappedBy = "cashback")
     private Set<AccountEntity> accounts = new HashSet<>();
@@ -42,7 +44,7 @@ public class CashbackEntity {
     public CashbackEntity() {
     }
 
-    public CashbackEntity(CashbackCategory category, BigDecimal rate) {
+    public CashbackEntity(CashbackCategory category, CashbackRateEntity rate) {
         this.category = category;
         this.rate = rate;
     }
