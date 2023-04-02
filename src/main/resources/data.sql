@@ -4,9 +4,9 @@ INSERT INTO customers (id, first_name, last_name, email) VALUES (101, 'John', 'S
 
 DELETE FROM accounts;
 INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1000, 100, 1000.0, '27-03-2023');
-INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1001, 100, 500.0, '01-01-2023');
-INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1002, 100, 150.5, '15-06-2022');
-INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1003, 100, 100.0, '20-05-2021');
+INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1001, 100, 0.0, '01-01-2023');
+INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1002, 100, 0.0, '15-06-2022');
+INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1003, 100, 1.0, '20-05-2021');
 INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1004, 101, 10.0, '01-01-2023');
 INSERT INTO accounts (id, fk_customer, amount, created) VALUES (1005, 101, 10000.0, '01-02-2023');
 
