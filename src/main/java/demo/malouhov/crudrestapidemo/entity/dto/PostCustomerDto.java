@@ -1,4 +1,4 @@
-package demo.malouhov.crudrestapidemo.customer.dto;
+package demo.malouhov.crudrestapidemo.entity.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

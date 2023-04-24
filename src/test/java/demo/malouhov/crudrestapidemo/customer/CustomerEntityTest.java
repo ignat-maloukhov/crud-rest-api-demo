@@ -1,5 +1,6 @@
 package demo.malouhov.crudrestapidemo.customer;
 
+import demo.malouhov.crudrestapidemo.entity.CustomerEntity;
 import nl.jqno.equalsverifier.EqualsVerifier;
 import org.junit.jupiter.api.Test;
 

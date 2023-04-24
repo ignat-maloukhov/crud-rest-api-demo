@@ -1,7 +1,6 @@
-package demo.malouhov.crudrestapidemo.customer;
+package demo.malouhov.crudrestapidemo.entity;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import demo.malouhov.crudrestapidemo.account.AccountEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

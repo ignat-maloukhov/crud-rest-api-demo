@@ -1,4 +1,4 @@
-package demo.malouhov.crudrestapidemo.customer;
+package demo.malouhov.crudrestapidemo.exception;
 
 import java.time.LocalDateTime;
 

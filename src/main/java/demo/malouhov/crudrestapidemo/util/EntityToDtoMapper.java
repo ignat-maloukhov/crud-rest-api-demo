@@ -1,7 +1,8 @@
-package demo.malouhov.crudrestapidemo.customer;
+package demo.malouhov.crudrestapidemo.util;
 
-import demo.malouhov.crudrestapidemo.customer.dto.GetCustomerDto;
-import demo.malouhov.crudrestapidemo.customer.dto.PostCustomerDto;
+import demo.malouhov.crudrestapidemo.entity.dto.GetCustomerDto;
+import demo.malouhov.crudrestapidemo.entity.dto.PostCustomerDto;
+import demo.malouhov.crudrestapidemo.entity.CustomerEntity;
 import org.mapstruct.Mapper;
 
 import java.util.List;

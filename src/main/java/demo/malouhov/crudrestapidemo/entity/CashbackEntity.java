@@ -1,7 +1,5 @@
-package demo.malouhov.crudrestapidemo.cashback;
+package demo.malouhov.crudrestapidemo.entity;
 
-import demo.malouhov.crudrestapidemo.account.AccountEntity;
-import demo.malouhov.crudrestapidemo.cashbackrate.CashbackRateEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;

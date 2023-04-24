@@ -1,4 +1,6 @@
-package demo.malouhov.crudrestapidemo.customer;
+package demo.malouhov.crudrestapidemo.service;
+
+import demo.malouhov.crudrestapidemo.entity.CustomerEntity;
 
 import java.util.List;
 
