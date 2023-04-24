@@ -1,4 +1,4 @@
-package demo.malouhov.crudrestapidemo.customer;
+package demo.malouhov.crudrestapidemo.exception;
 
 public class CustomerNotFoundException extends RuntimeException {
 

@@ -1,6 +1,9 @@
 package demo.malouhov.crudrestapidemo.customer;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import demo.malouhov.crudrestapidemo.controller.CustomerController;
+import demo.malouhov.crudrestapidemo.entity.CustomerEntity;
+import demo.malouhov.crudrestapidemo.service.CustomerService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;

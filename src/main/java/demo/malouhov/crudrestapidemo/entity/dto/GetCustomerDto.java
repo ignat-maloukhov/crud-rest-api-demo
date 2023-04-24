@@ -1,6 +1,6 @@
-package demo.malouhov.crudrestapidemo.customer.dto;
+package demo.malouhov.crudrestapidemo.entity.dto;
 
-import demo.malouhov.crudrestapidemo.account.AccountEntity;
+import demo.malouhov.crudrestapidemo.entity.AccountEntity;
 
 import java.util.List;
 

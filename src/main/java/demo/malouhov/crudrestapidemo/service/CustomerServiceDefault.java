@@ -1,5 +1,8 @@
-package demo.malouhov.crudrestapidemo.customer;
+package demo.malouhov.crudrestapidemo.service;
 
+import demo.malouhov.crudrestapidemo.exception.CustomerNotFoundException;
+import demo.malouhov.crudrestapidemo.entity.CustomerEntity;
+import demo.malouhov.crudrestapidemo.repository.CustomerRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

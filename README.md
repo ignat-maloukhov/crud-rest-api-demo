@@ -4,6 +4,10 @@
 I`m exited to introduce you my journey through Java and Spring technologies to Software Engineer knowledge and experience.
 I prefer to dig into all possible advantages / disadvantages when write every line of code.
 This is my best code right now, every day I work to improve it.
+What have I explored during this project?
+* ...
+* ...
+* ...
 
 ## Running application locally
 You can build a jar file and run it from the command line (it should work just as well with Java 17 or newer):
