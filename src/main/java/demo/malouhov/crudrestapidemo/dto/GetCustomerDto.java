@@ -1,4 +1,4 @@
-package demo.malouhov.crudrestapidemo.entity.dto;
+package demo.malouhov.crudrestapidemo.dto;
 
 import demo.malouhov.crudrestapidemo.entity.AccountEntity;
 

@@ -4,6 +4,11 @@
 I`m exited to introduce you my journey through Java and Spring technologies to Software Engineer knowledge and experience.
 I prefer to dig into all possible advantages / disadvantages when write every line of code.
 This is my best code right now, every day I work to improve it.
+
+Despite the fact that the spring documentation [recommends](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.structuring-your-code) using the Package by Feature project structure, 
+in my application I have chosen the Package by Layer structure, 
+because this is how it is implemented in the book of Walls, Craig Spring in Action.
+
 What have I explored during this project?
 * ...
 * ...
@@ -60,24 +65,25 @@ Database schema is shown bellow.
 
 ## References
 1. [Walls, Craig (2022). Spring in Action, Sixth Edition. Manning Publications. ISBN 9781617297571](https://www.manning.com/books/spring-in-action-sixth-edition)</br>
-2. [The Clean Architecture by Robert Martin](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)</br>
-3. [Spring Boot Reference Documentation section Using Spring Boot chapter 2. Structuring Your Code](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.structuring-your-code)</br>
-4. [Spring Boot Best Practices for Developers](https://medium.com/@raviyasas/spring-boot-best-practices-for-developers-3f3bdffa0090)</br>
-5. [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)</br>
-6. [Lombok & Hibernate: How to Avoid Common Pitfalls](https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/)</br>
-7. [Ultimate Guide to Implementing equals() and hashCode() with Hibernate](https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/)</br>
-8. [Hibernate @NotNull vs @Column(nullable = false)](https://www.baeldung.com/hibernate-notnull-vs-nullable)</br>
-9. [Unit Testing with Spring Boot article series](https://reflectoring.io/unit-testing-spring-boot/)</br>
-10. [Spring Boot MockMVC Example](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/)</br>
-11. [Map Associations with JPA and Hibernate – The Ultimate Guide](https://thorben-janssen.com/ultimate-guide-association-mappings-jpa-hibernate/)</br>
-12. [Entity Mappings: Introduction to JPA FetchTypes](https://thorben-janssen.com/entity-mappings-introduction-jpa-fetchtypes/)</br>
-13. [The DTO Pattern (Data Transfer Object)](https://www.baeldung.com/java-dto-pattern)</br>
-14. [Mapping JPA Entities into DTOs in Spring Boot Using MapStruct](https://auth0.com/blog/how-to-automatically-map-jpa-entities-into-dtos-in-spring-boot-using-mapstruct/)</br>
-15. [Jackson – Bidirectional Relationships](https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion)</br>
-16. [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)</br>
-17. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
-18. [Quick Guide on Loading Initial Data with Spring Boot](https://www.baeldung.com/spring-boot-data-sql-and-schema-sql)</br>
-19. [Derived Query Methods in Spring Data JPA Repositories](https://www.baeldung.com/spring-data-derived-queries)</br>
-20. [Advanced exception handling in Spring Boot](https://hyperskill.org/learn/step/19855)</br>
-21. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
-22. [Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)</br>
+2. [Spring Boot Reference Documentation section Using Spring Boot chapter 2. Structuring Your Code](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.structuring-your-code)</br>
+3. [Spring Boot Best Practices for Developers](https://medium.com/@raviyasas/spring-boot-best-practices-for-developers-3f3bdffa0090)</br>
+4. [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)</br>
+5. [Lombok & Hibernate: How to Avoid Common Pitfalls](https://thorben-janssen.com/lombok-hibernate-how-to-avoid-common-pitfalls/)</br>
+6. [Ultimate Guide to Implementing equals() and hashCode() with Hibernate](https://thorben-janssen.com/ultimate-guide-to-implementing-equals-and-hashcode-with-hibernate/)</br>
+7. [Hibernate @NotNull vs @Column(nullable = false)](https://www.baeldung.com/hibernate-notnull-vs-nullable)</br>
+8. [Unit Testing with Spring Boot article series](https://reflectoring.io/unit-testing-spring-boot/)</br>
+9. [Spring Boot MockMVC Example](https://howtodoinjava.com/spring-boot2/testing/spring-boot-mockmvc-example/)</br>
+10. [Map Associations with JPA and Hibernate – The Ultimate Guide](https://thorben-janssen.com/ultimate-guide-association-mappings-jpa-hibernate/)</br>
+11. [Entity Mappings: Introduction to JPA FetchTypes](https://thorben-janssen.com/entity-mappings-introduction-jpa-fetchtypes/)</br>
+12. [The DTO Pattern (Data Transfer Object)](https://www.baeldung.com/java-dto-pattern)</br>
+13. [Mapping JPA Entities into DTOs in Spring Boot Using MapStruct](https://auth0.com/blog/how-to-automatically-map-jpa-entities-into-dtos-in-spring-boot-using-mapstruct/)</br>
+14. [Jackson – Bidirectional Relationships](https://www.baeldung.com/jackson-bidirectional-relationships-and-infinite-recursion)</br>
+15. [Validation with Spring Boot - the Complete Guide](https://reflectoring.io/bean-validation-with-spring-boot/)</br>
+16. [How to persist creation and update timestamps with Hibernate](https://thorben-janssen.com/persist-creation-update-timestamps-hibernate/)</br>
+17. [Quick Guide on Loading Initial Data with Spring Boot](https://www.baeldung.com/spring-boot-data-sql-and-schema-sql)</br>
+18. [Derived Query Methods in Spring Data JPA Repositories](https://www.baeldung.com/spring-data-derived-queries)</br>
+19. [Advanced exception handling in Spring Boot](https://hyperskill.org/learn/step/19855)</br>
+20. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
+21. [Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)</br>
+22. [Testing Web, Service and Dao Layers in Spring Boot](https://howtodoinjava.com/spring-boot2/testing/spring-boot-2-junit-5/)</br>
+23. [Testcontainers with JUnit 5 and Spring Boot](https://howtodoinjava.com/spring-boot/testcontainers-with-junit-and-spring-boot/)</br>
