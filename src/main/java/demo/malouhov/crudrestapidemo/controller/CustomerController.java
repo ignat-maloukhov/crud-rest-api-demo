@@ -1,9 +1,9 @@
 package demo.malouhov.crudrestapidemo.controller;
 
-import demo.malouhov.crudrestapidemo.util.EntityToDtoMapper;
 import demo.malouhov.crudrestapidemo.dto.GetCustomerDto;
 import demo.malouhov.crudrestapidemo.dto.PostCustomerDto;
 import demo.malouhov.crudrestapidemo.service.CustomerService;
+import demo.malouhov.crudrestapidemo.util.EntityToDtoMapper;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Positive;
 import lombok.RequiredArgsConstructor;
