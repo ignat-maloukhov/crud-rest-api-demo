@@ -85,5 +85,6 @@ Database schema is shown bellow.
 19. [Advanced exception handling in Spring Boot](https://hyperskill.org/learn/step/19855)</br>
 20. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
 21. [Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)</br>
-22. [Testing Web, Service and Dao Layers in Spring Boot](https://howtodoinjava.com/spring-boot2/testing/spring-boot-2-junit-5/)</br>
+22. [Running Spring Boot with PostgreSQL in Docker Compose](https://www.baeldung.com/spring-boot-postgresql-docker)</br>
+22. [Unit Testing with Spring Boot](https://reflectoring.io/unit-testing-spring-boot/)</br>
 23. [Testcontainers with JUnit 5 and Spring Boot](https://howtodoinjava.com/spring-boot/testcontainers-with-junit-and-spring-boot/)</br>

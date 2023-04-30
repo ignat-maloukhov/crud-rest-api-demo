@@ -2,8 +2,6 @@ package demo.malouhov.crudrestapidemo.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import demo.malouhov.crudrestapidemo.entity.CashbackEntity;
-import demo.malouhov.crudrestapidemo.entity.CustomerEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
