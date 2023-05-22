@@ -5,9 +5,9 @@ I`m exited to introduce you my journey through Java and Spring technologies to S
 I prefer to dig into all possible advantages / disadvantages when write every line of code.
 This is my best code right now, every day I work to improve it.
 
-Despite the fact that the spring documentation [recommends](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.structuring-your-code) using the Package by Feature project structure, 
+Despite the fact that the Spring Documentation [recommends](https://docs.spring.io/spring-boot/docs/current/reference/html/using.html#using.structuring-your-code) using the Package by Feature project structure, 
 in my application I have chosen the Package by Layer structure, 
-because this is how it is implemented in the book of Walls, Craig Spring in Action.
+because this is how it is implemented in the book of Craig Walls "Spring in Action".
 
 What have I explored during this project?
 * ...
@@ -85,6 +85,11 @@ Database schema is shown bellow.
 19. [Advanced exception handling in Spring Boot](https://hyperskill.org/learn/step/19855)</br>
 20. [Complete Guide to Exception Handling in Spring Boot](https://reflectoring.io/spring-boot-exception-handling/)</br>
 21. [Error Handling for REST with Spring](https://www.baeldung.com/exception-handling-for-rest-with-spring)</br>
-22. [Running Spring Boot with PostgreSQL in Docker Compose](https://www.baeldung.com/spring-boot-postgresql-docker)</br>
 22. [Unit Testing with Spring Boot](https://reflectoring.io/unit-testing-spring-boot/)</br>
-23. [Testcontainers with JUnit 5 and Spring Boot](https://howtodoinjava.com/spring-boot/testcontainers-with-junit-and-spring-boot/)</br>
+23. [Docker : Zero to Hero (with SpringBoot + Postgres)](https://isurunuwanthilaka.medium.com/docker-zero-to-hero-with-springboot-postgres-e0b8c3a4dccb)</br>
+22. [Running Spring Boot with PostgreSQL in Docker Compose](https://www.baeldung.com/spring-boot-postgresql-docker)</br>
+23. [DB Integration Tests with Spring Boot and Testcontainers](https://www.baeldung.com/spring-boot-testcontainers-integration-test)</br>
+24. [Look at this: Testing Web, Service and Dao Layers in Spring Boot](https://howtodoinjava.com/spring-boot2/testing/spring-boot-2-junit-5/)</br>
+25. [Look at this: Testcontainers with JUnit 5 and Spring Boot](https://howtodoinjava.com/spring-boot/testcontainers-with-junit-and-spring-boot/)</br>
+26. [Look at this: Docker : Zero to Hero (with SpringBoot + Postgres)](https://isurunuwanthilaka.medium.com/docker-zero-to-hero-with-springboot-postgres-e0b8c3a4dccb)</br>
+27. [Look at this: Unit Testing the Service Layer of Spring boot Application](https://1kevinson.com/testing-service-spring-boot/)</br>
