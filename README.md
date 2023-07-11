@@ -9,11 +9,6 @@ Despite the fact that the Spring Documentation [recommends](https://docs.spring.
 in my application I have chosen the Package by Layer structure, 
 because this is how it is implemented in the book of Craig Walls "Spring in Action".
 
-What have I explored during this project?
-* ...
-* ...
-* ...
-
 ## Running application locally
 You can build a jar file and run it from the command line (it should work just as well with Java 17 or newer):
 ```
