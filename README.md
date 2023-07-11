@@ -43,6 +43,7 @@ password ****
 ```
 
 Database schema is shown bellow.
+
 ![Database schema](./src/main/resources/static/img/crud-rest-api-demo-database.png)
 
 ## Project backlog
